@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preußisches Landwirtshaus → Deutsche Küche am Olympiastadion Berlin</title>
+<meta name="description" content="Deutsche Küche | Berliner Spezialitäten, Restaurant Preussisches Landwirtshaus am Olympiastadion Berlin, Sky, Eurosport, Leinwand, Biergarten, Sport, Live, Fußball, Trauerfeier Anlaufstelle der Fans nach und vor großen Ereignissen im Olympiastadion.">
+<meta name="theme-color" content="#f5f4f1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Schließen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-backdrop" id="mobBackdrop" onclick="closeMob()"></div>
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-drawer-head">
+    <!--<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M24 4 L38 12 V26 C38 35 32 41 24 44 C16 41 10 35 10 26 V12 Z"/><path d="M24 12 L24 32 M16 20 L32 20"/></svg>-->
+    <b>Preußisches Landwirtshaus</b>
+  </div>
+
+  <div class="mob-nav-list">
+    <a href="#home" class="nl mob-nav-item" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+      Start
+    </a>
+    <a href="#about" class="nl mob-nav-item" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 11h1v6h1"/></svg>
+      Über uns
+    </a>
+    <a href="#menu" class="nl mob-nav-item" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2v7a2 2 0 0 0 4 0V2M8 9v13M17 2c-2 3-2 5 0 7s3-1 3-3-1-4-3-4zM19 9v13"/></svg>
+      Speisekarte
+    </a>
+    <a href="#events" class="nl mob-nav-item" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+      Events
+    </a>
+    <a href="#raeume" class="nl mob-nav-item" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="14" cy="12" r="1"/></svg>
+      Restaurant
+    </a>
+    <a href="#location" class="nl mob-nav-item" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.4A7 7 0 0 1 12 3a7 7 0 0 1 7 6.6C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+      Anfahrt
+    </a>
+    <a href="#reserve" class="mob-cta" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:1rem;height:1rem"><path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1.1.5 1.1 1.1V21c0 .6-.5 1.1-1.1 1.1C11.5 22.1 1.9 12.5 1.9 2.9 1.9 2.4 2.4 2 3 2h3.6c.6 0 1.1.5 1.1 1.1 0 1.4.2 2.7.6 3.9.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+      Tisch reservieren
+    </a>
+  </div>
+
+  <div class="mob-bottom">Flatowallee 23 · 14055 Berlin<br><a href="tel:+49303044023">+49 30 3044023</a></div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-text"><b>Preußisches Landwirtshaus</b><small>Deutsche Küche · Berliner Spezialitäten</small></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" class="nl"><strong>Über uns</strong></a></li>
+    <li><a href="#menu" class="nl"><strong>Speisekarte</strong></a></li>
+    <li><a href="#events" class="nl"><strong>Events</strong></a></li>
+    <li><a href="#raeume" class="nl"><strong>Restaurant</strong></a></li>
+    <li><a href="#location" class="nl"><strong>Anfahrt</strong></a></li>
+  </ul>
+  <a href="#reserve" class="nav-cta"><strong>Tisch reservieren</strong></a>
+  <button class="hamburger" id="ham" onclick="toggleMob()" aria-label="Menü öffnen" aria-expanded="false">
+    <span class="hb-bars"><span></span><span></span><span></span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active"><img src="eingang.jpg" alt="Eingang"></div>
+    <div class="hero-slide"><img src="biergarten1.jpg" alt="Biergarten"></div>
+    <div class="hero-slide"><img src="tresenraum2.jpg" alt="Tresenraum"></div>
+    <div class="hero-slide"><img src="kleinraum1.jpg" alt="Kleinraum"></div>
+    <div class="hero-slide"><img src="saal1.jpg" alt="Festsaal"></div>
+    <div class="hero-slide"><img src="biergarten2.jpg" alt="Biergarten"></div>
+    <div class="hero-slide"><img src="eingang2.jpg" alt="Eingang"></div>
+  </div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-content">
+    <div class="h-sub">BERLIN · CHARLOTTENBURG · SEIT 3. GENERATION</div>
+    <h1>Preußisches<br>Landwirtshaus</h1>
+    <p class="h-sub"><strong>Deutsche Küche und Berliner Spezialitäten</strong></p>
+    <p class="h-sub"><strong>Direkt am Olympiastadion.</strong></p>
+    <div class="h-btns">
+      <a href="#menu" class="btn-g"><strong>Zur Speisekarte</strong></a>
+      <a href="#reserve" class="btn-o"><strong>Tisch reservieren</strong></a>
+    </div>
+  </div>
+
+  <div class="h-dots" id="heroDots">
+    <div class="h-dot on" onclick="goSlide(0)"></div>
+    <div class="h-dot" onclick="goSlide(1)"></div>
+    <div class="h-dot" onclick="goSlide(2)"></div>
+    <div class="h-dot" onclick="goSlide(3)"></div>
+    <div class="h-dot" onclick="goSlide(4)"></div>
+    <div class="h-dot" onclick="goSlide(5)"></div>
+    <div class="h-dot" onclick="goSlide(6)"></div>
+  </div>
+
+  <!-- <div class="scroll-cue"><span>Entdecken</span><div class="scroll-line"></div></div> -->
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat rv">
+    <div class="s-num" data-final="3" data-suffix=".">0</div>
+    <span class="s-lbl"><strong>3. Generation</strong></span>
+    <p class="s-desc"><strong>Familientradition mit Herzblut</strong></p>
+  </div>
+  <div class="stat rv d1">
+    <div class="s-num" data-final="180">0</div>
+    <span class="s-lbl"><strong>Sitzplätze im Restaurant</strong></span>
+    <p class="s-desc"><strong>In drei gemütlichen Gasträumen</strong></p>
+  </div>
+  <div class="stat rv d2">
+    <div class="s-num" data-final="600">0</div>
+    <span class="s-lbl"><strong>Sitzplätze im Biergarten</strong></span>
+    <p class="s-desc"><strong>Unter freiem Berliner Himmel</strong></p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="stag rv"><strong>Unser Haus</strong></div>
+      <h2 class="sh rv d1"><strong>Tradition &<br>Berliner Charme</strong></h2>
+      <div class="about-body rv d2">
+        <p>Das nunmehr in der 3. Generation geführte Traditionshaus liegt im Herzen Berlin-Charlottenburgs (Westend) und ist ein echtes Stück Berliner Geschichte.</p>
+        <p>Ausgestattet mit drei Gasträumen für insgesamt 180 Personen und einem wunderschönen Biergarten für bis zu 600 Personen bieten wir den idealen Rahmen für Hochzeiten, Geburtstage, Firmenfeste und gemütliche Stammtischrunden.</p>
+        <p>Durch die unmittelbare Nähe zum Berliner Olympiastadion und der Waldbühne sind wir ein beliebter Anlaufpunkt vor und nach Bundesligaspielen und Konzerten.</p>
+      </div>
+      <div class="feats rv d3">
+        <div class="feat"><svg class="icon" viewBox="0 0 24 24"><path d="M6 3h9l-1 4H7z"/><path d="M6 7v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7"/><path d="M16 9h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/></svg><div><span class="feat-t"><strong>Biergarten</strong></span><span class="feat-d">Großer Außenbereich für gesellige Stunden</span></div></div>
+        <div class="feat"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2c1 3-2 4-2 7a3 3 0 0 0 6 0c0-1-1-2-1-2 1 2 3 3 3 6a6 6 0 0 1-12 0c0-5 4-6 6-11z"/></svg><div><span class="feat-t"><strong>Holzkohlegrill</strong></span><span class="feat-d">Frisch gegrilltes bei Veranstaltungen</span></div></div>
+        <div class="feat"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8M12 17v4"/></svg><div><span class="feat-t"><strong>Sky Live</strong></span><span class="feat-d">Sport auf Großbildleinwand</span></div></div>
+        <div class="feat"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M4 6l16 12M20 6 4 18"/></svg><div><span class="feat-t"><strong>Feiern &amp; Events</strong></span><span class="feat-d">Maßgeschneiderte Veranstaltungen</span></div></div>
+      </div>
+      <div style="margin-top:1.8rem" class="rv d4"><a href="#menu" class="btn-g"><strong>Speisekarte entdecken</strong></a></div>
+    </div>
+    <div class="about-imgs rv d2">
+      <img class="ai-m" src="tresenraum2.jpg" alt="Restaurant Innenraum" loading="lazy">
+      <img class="ai-a" src="saal1.jpg" alt="Festsaal" loading="lazy">
+      <div class="ai-badge">180 Gäste<small>Drei Gasträume</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="orn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z"/></svg></div>
+
+<!-- FOOD GALLERY -->
+<section class="sec food-sec" id="gallery">
+  <div class="food-hdr">
+    <div>
+      <div class="stag rv"><strong>Einblicke</strong></div>
+      <h2 class="sh rv d1"><strong>Genuss</strong></h2>
+    </div>
+    <a href="#menu" class="btn-g rv" style="align-self:flex-end">Speisekarte</a>
+  </div>
+  <div class="fg-grid">
+    <div class="fg"><img src="schnitzel.jpeg" alt="Festsaal" loading="lazy"><div class="fg-lbl">Schnitzel</div></div>
+    <div class="fg"><img src="Currywurst.jpg" alt="Schnitzel" loading="lazy"><div class="fg-lbl">Currywurst</div></div>
+    <div class="fg"><img src="Gulash.jpg" alt="Suppe" loading="lazy"><div class="fg-lbl">Hausgemachte Suppen</div></div>
+    <div class="fg"><img src="apfelstrudel.jpg" alt="Apfelstrudel" loading="lazy"><div class="fg-lbl">Apfelstrudel &amp; Desserts</div></div>
+    <!-- <div class="fg"><img src="kasespatzle.jpg" alt="Kutscherteller" loading="lazy"><div class="fg-lbl">Käsespatzle</div></div> -->
+    <div class="fg"><img src="salat.jpg" alt="Biergarten" loading="lazy"><div class="fg-lbl">Gemischter Salat</div></div>
+    <div class="fg"><img src="flammkuchen.jpeg" alt="Flammkuchen" loading="lazy"><div class="fg-lbl">Flammkuchen</div></div>
+    <div class="fg"><img src="kutscherpfanne.jpeg" alt="Kutscherteller" loading="lazy"><div class="fg-lbl">KutscherPfanne</div></div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="sec menu-sec" id="menu">
+  <div class="stag rv"><strong>wir bieten</strong></div>
+  <h2 class="sh rv d1"><strong>Die Speisekarte </strong></h2>
+
+  <div class="mtabs">
+    <button class="mtab on" onclick="mTab(this,'hk')"><strong>Speisekarte</strong></button>
+    <button class="mtab" onclick="mTab(this,'wk')"><strong>Wochenkarte</strong></button>
+    <button class="mtab" onclick="mTab(this,'va')"><strong>Veranstaltungsspeisekarte</strong></button>
+    <button class="mtab" onclick="mTab(this,'bf')"><strong>Buffetvorschläge</strong></button>
+    <button class="mtab" onclick="mTab(this,'tr')"><strong>Trauerfeiern</strong></button>
+    <button class="mtab" onclick="mTab(this,'sh')"><strong>Saisonale Highlights</strong></button>
+  </div>
+
+  <!-- HAUPTKARTE -->
+  <div class="mpanel on" id="p-hk">
+    <div class="panel-top">
+      <a href="speisekarte.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+        <strong>PDF · Speisekarte</strong>
+      </a>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Suppen</h3>
+      <div class="mgrid"><div class="mi"><div><span class="mi-n">Hausgemachte ungarische Paprika-Gulaschsuppe</span></div><span class="mi-p">9,90 €</span></div></div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Salate</h3>
+      <div class="mgrid"><div class="mi"><div><span class="mi-n">Großer gemischter Salat der Saison</span><span class="mi-d">Joghurt-, Orangen-Senf- oder Essig-Olivenöl-Dressing · +Thunfisch 4 € · +Schafskäse 4 € · +Schnitzelstreifen 7,50 €</span></div><span class="mi-p">14,50 €</span></div></div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Flammkuchen frisch aus dem Ofen</h3>
+      <div class="mgrid">
+        <div class="mi"><div><span class="mi-n">Elsässer „Klassisch“</span><span class="mi-d">mit Zwiebeln und Schinkenwürfeln</span></div><span class="mi-p">15,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">„Mediterran“</span><span class="mi-d">Cocktailtomaten, Mozzarella, Basilikum-Pesto</span></div><span class="mi-p">16,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">„Lachs“</span><span class="mi-d">mit Lachs und Lauch</span></div><span class="mi-p">17,50 €</span></div>
+      </div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Vegetarisches</h3>
+      <div class="mgrid">
+        <div class="mi"><div><span class="mi-n">Käsespätzle mit Röstzwiebeln</span><span class="mi-d">an einem Salatbouquet</span></div><span class="mi-p">18,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Gnocchi mit Cherrytomaten &amp; Parmesan</span><span class="mi-d">geschmolzen mit frischem Parmesan</span></div><span class="mi-p">18,50 €</span></div>
+      </div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Landwirtshaus Klassiker</h3>
+      <div class="mgrid">
+        <div class="mi"><div><span class="mi-n">Hausgemachte Eisbeinsülze</span><span class="mi-d">mit Sauce Tartare und Bratkartoffeln</span></div><span class="mi-p">18,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Frische Blut- und Leberwurst</span><span class="mi-d">auf Sauerkraut und Salzkartoffeln</span></div><span class="mi-p">19,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">„Preußischer Kutscherteller“</span><span class="mi-d">2 hausgemachte Bouletten auf Sauerkraut und Bratkartoffeln</span></div><span class="mi-p">19,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Kalte Scheiben vom Roastbeef</span><span class="mi-d">zart rosa, Sauce Tartare, Bratkartoffeln</span></div><span class="mi-p">20,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Wiener Zwiebelrostbraten vom Rumpsteak</span><span class="mi-d">mit Röstzwiebeln und Bratkartoffeln</span></div><span class="mi-p">29,50 €</span></div>
+      </div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Schnitzelspezialitäten</h3>
+      <div class="mgrid">
+        <div class="mi"><div><span class="mi-n">Schnitzel „Wiener Art“</span><span class="mi-d">Pommes frites und gemischter Salat</span></div><span class="mi-p">19,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Jägerschnitzel</span><span class="mi-d">Butterspätzle und hausgemachte Pilzrahmsauce</span></div><span class="mi-p">21,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Cordon Bleu</span><span class="mi-d">Kochschinken, Käse, Brokkoli, Drillingskartoffeln</span></div><span class="mi-p">23,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Wiener Kalbsschnitzel</span><span class="mi-d">mit lauwarmem Steirischem Kartoffelsalat</span></div><span class="mi-p">28,50 €</span></div>
+      </div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Fischgerichte</h3>
+      <div class="mgrid">
+        <div class="mi"><div><span class="mi-n">Matjesfilets auf Hausfrauensauce</span><span class="mi-d">Zwiebeln, Äpfel, Gewürzgurke, Petersilienkartoffeln</span></div><span class="mi-p">18,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Zanderfilet gebraten</span><span class="mi-d">Kapern, Zitronenfilets, Dillkartoffeln, gemischter Salat</span></div><span class="mi-p">24,50 €</span></div>
+      </div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Für unsere kleinen Gäste (bis 12 Jahre)</h3>
+      <div class="mgrid">
+        <div class="mi"><div><span class="mi-n">Mini Grillwürstchen</span><span class="mi-d">mit Pommes frites</span></div><span class="mi-p">8,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Kleines Schweineschnitzel</span><span class="mi-d">mit Karotten und Pommes frites</span></div><span class="mi-p">10,50 €</span></div>
+      </div>
+    </div>
+    <div class="mcat"><h3 class="mcat-ttl">Dessert</h3>
+      <div class="mgrid">
+        <div class="mi"><div><span class="mi-n">Apfelstrudel</span><span class="mi-d">mit Vanilleeis und Sahne</span></div><span class="mi-p">9,90 €</span></div>
+        <div class="mi"><div><span class="mi-n">Warmer Schokokuchen</span><span class="mi-d">mit flüssigem Kern und Beerensauce</span></div><span class="mi-p">9,90 €</span></div>
+      </div>
+    </div>
+    <p class="mnote">Bei Fragen zu Allergenen wenden Sie sich an unser Servicepersonal. Alle Preise in €.</p>
+  </div>
+
+  <!-- WOCHENKARTE (NEW) -->
+  <div class="mpanel" id="p-wk">
+    <div class="panel-top">
+      <a href="wochenkarte.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+        <strong>PDF · Wochenkarte</strong>
+      </a>
+    </div>
+    <p class="trauer-note">Unsere Wochenkarte wechselt saisonal und richtet sich nach frischen, regionalen Zutaten.</p>
+    <p class="mnote">Die aktuellen Gerichte unserer Wochenkarte finden Sie in der PDF oben. Fragen Sie gern auch unser Servicepersonal nach den Empfehlungen.</p>
+  </div>
+
+  <!-- VERANSTALTUNGEN -->
+  <div class="mpanel" id="p-va">
+    <div class="panel-top">
+      <a href="VeranstaltungenOlympiastadion.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+        <strong>PDF · Veranstaltungsspeisekarte</strong>
+      </a>
+    </div>
+    <!--<p class="mnote" style="margin-bottom:1rem">An Veranstaltungstagen im Olympiastadion oder der Waldbühne (ca. 3 Stunden vor Beginn) gilt diese Karte. Im Biergarten zusätzlich: Holzkohlegrill.</p>-->
+    <p class="drink-note"><strong>HINWEIS:</strong> Bitte beachten Sie, dass an Veranstaltungstagen im Olympiastadion oder in der Waldbühne gesonderte Öffnungszeiten (in der Regel 3-4 Stunden vor Veranstaltungsbeginn) gelten, und wir folgende Speisekarte anbieten.</p>
+    <div class="mcat" style="margin-top:1.6rem"><div class="mgrid">
+      <div class="mi"><div><span class="mi-n">Hausgemachte Paprika-Gulaschsuppe</span></div><span class="mi-p">9,90 €</span></div>
+      <div class="mi"><div><span class="mi-n">Großer gemischter Salat mit Schafskäse</span></div><span class="mi-p">18,50 €</span></div>
+      <div class="mi"><div><span class="mi-n">Gnocchi mit Cherrytomaten und Parmesan</span></div><span class="mi-p">18,50 €</span></div>
+      <div class="mi"><div><span class="mi-n">Matjesfilets auf Hausfrauensauce</span><span class="mi-d">Zwiebeln, Äpfel, Petersilienkartoffeln</span></div><span class="mi-p">18,50 €</span></div>
+      <div class="mi"><div><span class="mi-n">Berliner Currywurst XL</span><span class="mi-d">mit Pommes frites und Krautsalat</span></div><span class="mi-p">15,50 €</span></div>
+      <div class="mi"><div><span class="mi-n">Hausgemachte Eisbeinsülze</span><span class="mi-d">Sauce Tartare und Bratkartoffeln</span></div><span class="mi-p">18,50 €</span></div>
+      <div class="mi"><div><span class="mi-n">„Preußischer Kutscherteller“</span><span class="mi-d">2 Bouletten, Sauerkraut, Bratkartoffeln</span></div><span class="mi-p">19,50 €</span></div>
+      <div class="mi"><div><span class="mi-n">Schnitzel „Wiener Art“</span><span class="mi-d">Pommes frites und Salatgarnitur</span></div><span class="mi-p">19,50 €</span></div>
+      <div class="mi"><div><span class="mi-n">Apfelstrudel mit Vanilleeis und Sahne</span></div><span class="mi-p">9,90 €</span></div>
+    </div></div>
+  </div>
+
+  <!-- BUFFET -->
+  <div class="mpanel" id="p-bf">
+    <div class="panel-top">
+      <a href="buffet.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+        <strong>PDF · Buffetvorschläge</strong>
+      </a>
+    </div>
+    <div class="buffet-grid">
+      <div class="buffet-card"><h3 class="mcat-ttl">Grillbuffet</h3><p>Rostbratwürstchen · Nackensteaks · Maiskolben · Bouletten · Hähnchenbrust · Kräuterbutter · Salatbuffet · Kartoffelsalat · Obst · Baguette</p><p class="buffet-price">45,00 € pro Person</p></div>
+      <div class="buffet-card"><h3 class="mcat-ttl">Berliner Art</h3><p>Kartoffelsuppe · Rippchen · Prager Schinken · Hähnchenkeulen · Heringstopf · Hackepeter · Bouletten · Rollmöpse · Harzer Käse · Berliner Pfannkuchen · Rote Grütze</p><p class="buffet-price">49,00 € pro Person</p></div>
+      <div class="buffet-card"><h3 class="mcat-ttl">Preußisches Landwirtshaus</h3><p>Gulaschsuppe · Spanferkelbraten · Kasseler auf Sauerkraut · Schinkenröllchen · Matjesfilets · Räucherfisch · Krautsalat · Käsespezialitäten · Beerenschmaus · Schokoladenflan</p><p class="buffet-price">55,00 € pro Person</p></div>
+      <div class="buffet-card"><h3 class="mcat-ttl">Italienische Art</h3><p>Minestrone · Lammkeule · Kalbsgeschnetzeltes · Antipasti · Vitello Tonnato · Parmaschinken · Salami · Frutti di Mare · Tomaten-Mozzarella · Tiramisu · Panna Cotta</p><p class="buffet-price">59,00 € pro Person</p></div>
+    </div>
+    <p class="mnote" style="margin-top:1.3rem">Buffets ab 30 Personen - nach vorheriger Absprache. Alle Preise in €.</p>
+  </div>
+
+  <!-- TRAUERFEIER -->
+  <div class="mpanel" id="p-tr">
+    <div class="panel-top">
+      <a href="trauerfeier.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+        <strong>PDF · Trauerfeiern</strong>
+      </a>
+    </div>
+    <p class="trauer-note">In stillem Gedenken - wir begleiten Sie diskret und würdevoll in schweren Stunden.</p>
+
+    <div class="trauer-gallery">
+      <figure>
+        <img src="sadroom.jpg" alt="Ruhiger Gastraum für Trauerfeiern" loading="lazy">
+        <figcaption><strong>ruhiger Gastraum</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="gulasch.jpg" alt="Hausgemachte Gulaschsuppe" loading="lazy">
+        <figcaption><strong>Hausgemachte Suppen</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="kuchen.jpg" alt="Hausgemachte Kuchen" loading="lazy">
+        <figcaption> <strong>Kuchen</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="canapes.jpg" alt="Reich garnierte Canapés" loading="lazy">
+        <figcaption><strong>Reich garnierte Canapés</strong></figcaption>
+      </figure>
+    </div>
+
+    <div class="trauer-grid">
+      <div class="mcat">
+        <h3 class="mcat-ttl">Suppen</h3>
+        <div class="mi"><div><span class="mi-n">Tomatensuppe</span><span class="mi-d">mit Gartenkresse</span></div><span class="mi-p">6,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Berliner Kartoffelsuppe</span><span class="mi-d">mit wildem Majoran</span></div><span class="mi-p">7,50 €</span></div>
+        <div class="mi"><div><span class="mi-n">Hausgemachte Gulaschsuppe</span></div><span class="mi-p">8,50 €</span></div>
+      </div>
+      <div class="mcat">
+        <h3 class="mcat-ttl">Canapés (ab 20 Stück/Sorte)</h3>
+        <p style="color:var(--ink-soft);font-size:1rem;line-height:2.1">Salami · Roastbeef · Schinken · Katenschinken · Hähnchenbrust · Mettwurst · Forellenfilets · Geräucherter Lachs · Schnittkäse · Rohmilchkäse</p>
+        <p class="buffet-price" style="margin-top:.6rem">3,90 € / Stück</p>
+      </div>
+      <div class="mcat">
+        <h3 class="mcat-ttl">Blechkuchen (ab 24 Stück/Sorte)</h3>
+        <p style="color:var(--ink-soft);font-size:1rem;line-height:2.1">Donauwelle · Mohnschnitte · Schokolade · Schoko-Kirsch-Streusel · Apfel-Streusel · Erdbeer-Sahne · Mandel-Bienenstich · Käse-Mandarine</p>
+        <p class="buffet-price" style="margin-top:.6rem">4,50 € / Stück</p>
+      </div>
+    </div>
+    <p class="mnote" style="margin-top:1.3rem">Gesonderte Öffnungszeiten für Trauerfeiern ab 30 Personen nach vorheriger Absprache. Alle Preise in €.</p>
+  </div>
+
+  <!-- SAISONALE HIGHLIGHTS -->
+  <div class="mpanel" id="p-sh">
+    <p class="trauer-note"><strong>Unsere saisonalen Highlights...</strong></p>
+    <div class="trauer-gallery">
+      <figure onclick="openLightbox(this.querySelector('img').src)">
+        <img src="spragel.jpg" alt="[Spragelzeit]" loading="lazy">
+        <figcaption><strong>Spragelzeit</strong></figcaption>
+      </figure>
+      <figure onclick="openLightbox(this.querySelector('img').src)">
+        <img src="pfifferlinge.png" alt="[Pfifferlingezeit]" loading="lazy">
+        <figcaption><strong>Pfifferlingezeit</strong></figcaption>
+      </figure>
+      <figure onclick="openLightbox(this.querySelector('img').src)">
+        <img src="kurbis.jpg" alt="[Kürbiszeit]" loading="lazy">
+        <figcaption><strong>Kürbiszeit</strong></figcaption>
+      </figure>
+      <figure onclick="openLightbox(this.querySelector('img').src)">
+        <img src="Gänse.jpg" alt="[Gänsezeit]" loading="lazy">
+        <figcaption><strong>Gänsezeit</strong></figcaption>
+      </figure>
+    </div>
+    <!-- <p class="mnote">Ersetzen Sie <code>highlight1.jpg</code> – <code>highlight4.jpg</code> durch Ihre eigenen Fotos und tragen Sie bei jedem Bild (im <code>alt</code> und in der <code>figcaption</code>) den jeweiligen Gerichtnamen ein.</p> -->
+  </div>
+
+</section>
+
+<!-- EVENTS -->
+<section class="sec ev-sec" id="events">
+  <div class="stag rv"><strong>Erleben &amp; Feiern</strong></div>
+  <h2 class="sh rv d1"><strong>Veranstaltungen &amp;<br>Events</strong></h2>
+  <div class="ev-grid">
+    <a class="ecard" href="https://www.jazzfueralle.de/programm/" target="_blank" rel="noopener noreferrer">
+      <div class="ecard-ico-wrap"><svg class="ecard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="18" r="3"/><path d="M12 18V4l8 3"/></svg></div>
+      <div class="ecard-n">Jazz &amp; Talk</div>
+      <p class="ecard-d">Livemusik und Gespräche in entspannter Atmosphäre → Berliner Jazz für alle Generationen.</p>
+      <span class="ecard-arr">Platz Reservieren →</span>
+    </a>
+    <a class="ecard" href="https://www.gruseldinner.de/veranstaltungsort/preussisches-landwirtshaus/" target="_blank" rel="noopener noreferrer">
+      <div class="ecard-ico-wrap"><svg class="ecard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 0-7 7v9l2-2 2 2 3-2 3 2 2-2 2 2V9a7 7 0 0 0-7-7z"/><circle cx="9.5" cy="9" r="1"/><circle cx="14.5" cy="9" r="1"/></svg></div>
+      <div class="ecard-n">Grusel Dinner</div>
+      <p class="ecard-d">Schaurig-schöner Dinnerabend → exzellentes Essen trifft auf gruselige Unterhaltung.</p>
+      <span class="ecard-arr">Tickets Kaufen →</span>
+    </a>
+    <a class="ecard" href="https://www.das-kriminal-dinner.de/krimidinner-tatorte/berlin/preussisches-landwirtshaus" target="_blank" rel="noopener noreferrer">
+      <div class="ecard-ico-wrap"><svg class="ecard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+      <div class="ecard-n">Das Kriminal Dinner</div>
+      <p class="ecard-d">Berlins beliebtestes Krimi-Dinner → lösen Sie den Fall beim Speisen.</p>
+      <span class="ecard-arr">Tickets Kaufen →</span>
+    </a>
+    <a class="ecard" href="https://ajaya-bk.github.io/Hans-joachim_Show/" target="_blank" rel="noopener noreferrer">
+      <div class="ecard-ico-wrap"><svg class="ecard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21c0-3.5 3.5-6 8-6s8 2.5 8 6"/><circle cx="12" cy="8" r="4"/></svg></div>
+      <div class="ecard-n">Berliner Musikfreunde - ACHIM SHOW</div>
+      <p class="ecard-d">Erleben Sie unvergessliche Live Abende voller Schlager, Country und Volksmusik in herzlicher Atmosphäre, mit wunderbaren Künstlern. Live im Landwirtshaus.</p>
+      <span class="ecard-arr">Tickets Kaufen →</span>
+    </a>
+    <a class="ecard" href="https://www.myshowtime.de/preussischeslandwirtshaus" target="_blank" rel="noopener noreferrer">
+      <div class="ecard-ico-wrap"><svg class="ecard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 2 2 0 0 0 0 6 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2 2 2 0 0 0 0-6z"/><path d="M9 7v10" stroke-dasharray="2 2.5"/></svg></div>
+      <div class="ecard-n">Magic Dinner Show</div>
+      <p class="ecard-d">Erleben Sie faszinierende Zauberkunst hautnah – überraschend, charmant direkt vor Ihren Augen.</p>
+      <span class="ecard-arr">Tickets Kaufen →</span>
+    </a>
+    <a class="ecard" href="https://www.jens-soering.de/berlin" target="_blank" rel="noopener noreferrer">
+      <div class="ecard-ico-wrap"><svg class="ecard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z"/><path d="M6 11a6 6 0 0 0 12 0M12 19v3"/></svg></div>
+      <div class="ecard-n">Jens Söring</div>
+      <p class="ecard-d">True Crime von einem Insider</p>
+      <span class="ecard-arr">Tickets Kaufen →</span>
+    </a>
+    <a class="ecard" href="https://mangiapane.ticket.io/74QUU0r2/" target="_blank" rel="noopener noreferrer">
+      <div class="ecard-ico-wrap"><svg class="ecard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 3l4 4 4-4"/><circle cx="12" cy="12" r="2"/><path d="M8 18c0-2 1.8-3 4-3s4 1 4 3"/></svg></div>
+      <div class="ecard-n">Reality TV Quiz</div>
+      <p class="ecard-d">Moderiert von Mathias Mangiapane</p>
+      <span class="ecard-arr">Tickets Kaufen →</span>
+    </a>
+  </div>
+</section>
+
+<!-- HINWEIS -->
+<div class="hinweis-strip">
+  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+  <div class="hinweis-text">
+    <h4><strong>HINWEIS</strong></h4>
+    <p>Bei Veranstaltungen im Olympiastadion und in der Waldbühne öffnen wir bereits 3–4 Stunden vor Veranstaltungsbeginn. Unsere Öffnungszeiten richten sich nach den jeweiligen Veranstaltungen.
+An diesen Tagen nehmen wir keine Reservierungen an. Die Tische werden ausschließlich nach freier Platzwahl vergeben.</p>
+  </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="tband">
+  <div class="t-stars">
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+  </div>
+  <p class="tband-txt">„Ein echtes Berliner Traditionsrestaurant → herzlich, authentisch, hervorragende Küche.“</p>
+  <div class="t-stars">
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+    <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3 1.4-6.3L1 7.4l6.4-.6z"/></svg>
+  </div>
+</div>
+
+<!-- RÄUME & RAUMMIETE -->
+<section class="sec raeume-sec" id="raeume">
+  <div class="stag rv"><strong>Restaurant &amp; Biergarten</strong></div>
+  <h2 class="sh rv d1"><strong>Location</strong></h2>
+  <!-- <p class="about-body rv d2" style="max-width:640px">Raummiete für Versammlungen aller Art <br> für das Jahr 2026.</p> -->
+  <div class="room-grid rv d2">
+    <div class="room-card">
+      <div class="room-photos">
+        <img src="biergarten1.jpg" alt="Biergarten" onclick="openLightbox(this.src)">
+        <img src="biergarten2.jpg" alt="Biergarten" onclick="openLightbox(this.src)">
+      </div>
+      <div class="room-cap"><strong>Biergarten</strong><span>bis zu 600 Personen</span></div>
+    </div>
+    <div class="room-card">
+      <div class="room-photos">
+        <img src="tresenraum2.jpg" alt="Hauptgastraum" onclick="openLightbox(this.src)">
+        <img src="tresenraum1.jpg" alt="Hauptgastraum" onclick="openLightbox(this.src)">
+      </div>
+      <div class="room-cap"><strong>Hauptgastraum</strong><span>bis zu 40 Personen</span></div>
+    </div>
+    <div class="room-card">
+      <div class="room-photos">
+        <img src="kleinraum2.jpg" alt="Kleines Zimmer" onclick="openLightbox(this.src)">
+        <img src="kleinraum1.jpg" alt="Kleines Zimmer" onclick="openLightbox(this.src)">
+      </div>
+      <div class="room-cap"><strong>Kleines Zimmer</strong><span>bis zu 30 Personen</span></div>
+    </div>
+    <div class="room-card">
+      <div class="room-photos">
+        <img src="saal1.jpg" alt="Großer Saal" onclick="openLightbox(this.src)">
+        <img src="saal2.jpg" alt="Großer Saal" onclick="openLightbox(this.src)">
+      </div>
+      <div class="room-cap"><strong>Großer Saal</strong><span>bis zu 100 Personen</span></div>
+    </div>
+  </div>
+
+  <div class="stag rv"><strong>Räume mieten</strong></div>
+  <h2 class="sh rv" style="margin-bottom:2rem"><strong>Räume für Versammlungen</strong></h2>
+<a href="versammlungen.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
+    <strong>PDF · Versammlungen</strong>
+  </a>
+  <br
+  <div class="rent-grid rv d3">
+    <div class="rent-card">
+      <h3>Großer Saal <span class="rent-cap">bis zu 100 Personen</span></h3>
+      <p class="rent-price">450,00 €</p>
+      <p class="rent-note">Innerhalb unserer regulären Öffnungszeiten</p>
+      <ul class="rent-terms">
+        <li>Jede weitere angefangene Stunde ab 22:00 Uhr wird mit 80,00 € berechnet.</li>
+        <li>Die Raummiete entfällt, wenn ein gastronomischer Mindestumsatz in Höhe von 900,00 € erzielt wird.</li>
+      </ul>
+      <h4>Ausstattung</h4>
+      <ul class="rent-equip">
+        <li>Tische und Stühle für bis zu 100 Personen</li>
+        <li>Beamer mit HDMI- und VGA-Kabel, Leinwand und Musikanlage</li>
+        <li>WLAN Nutzung</li>
+      </ul>
+    </div>
+    <div class="rent-card">
+      <h3>Kleines Zimmer <span class="rent-cap">bis zu 30 Personen</span></h3>
+      <p class="rent-price">400,00 €</p>
+      <p class="rent-note">Innerhalb unserer regulären Öffnungszeiten</p>
+      <ul class="rent-terms">
+        <li>Jede weitere angefangene Stunde ab 22:00 Uhr wird mit 80,00 € berechnet.</li>
+        <li>Die Raummiete entfällt, wenn ein gastronomischer Mindestumsatz in Höhe von 800,00 € erzielt wird.</li>
+      </ul>
+      <h4>Ausstattung</h4>
+      <ul class="rent-equip">
+        <li>Tische und Stühle für bis zu 30 Personen</li>
+        <li>Flachbildfernseher mit HDMI-Kabel</li>
+        <li>WLAN Nutzung</li>
+      </ul>
+    </div>
+  </div>
+  <p class="mnote" style="margin-top:1.4rem">Die Raummiete beinhaltet die Kosten für Heizung, Licht und Grundreinigung. Alle Preise verstehen sich inkl. der gesetzlichen MwSt.</p>
+</section>
+
+<!-- LOCATION -->
+<section class="sec" id="location">
+  <div class="loc-grid">
+    <div>
+      <div class="stag rv"><strong>Besuchen Sie uns</strong></div>
+      <h2 class="sh rv d1"><strong>Anfahrt &amp;<br>Öffnungszeiten</strong></h2>
+      <div style="margin-top:1.4rem">
+        <div class="irow rv d1">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.4A7 7 0 0 1 12 3a7 7 0 0 1 7 6.6C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+          <div><span class="ilbl"><strong>Adresse</strong></span><p class="ival">Flatowallee 23<br>14055 Berlin · Charlottenburg (Westend)</p></div>
+        </div>
+        <div class="irow rv d2">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <div><span class="ilbl"><strong>Öffnungszeiten</strong></span>
+            <div class="hrs">
+              <div class="hcard"><span class="hcard-d"><strong>Montag – Samstag</strong></span><span class="hcard-t">17:00 Uhr - 22:00 Uhr</span></div>
+              <div class="hcard"><span class="hcard-d"><strong>Sonntag &amp; Feiertage</strong></span><span class="hcard-t">12:00 Uhr - 22:00 Uhr</span></div>
+            </div>
+            <p style="font-size:1rem;color:var(--ink-soft);margin-top:.7rem;line-height:1.7"><strong>Hinweis:</strong></p>
+            <p style="font-size:1rem;color:var(--ink-soft);margin-top:.7rem;line-height:1.7">Sonderöffnungszeiten für Trauerfeiern und Veranstaltungen ab 30 Personen sind nach vorheriger Absprache möglich.<br>
+            <br> Bei Veranstaltungen im Olympiastadion oder in der Waldbühne öffnen wir bereits 3–4 Stunden vor Veranstaltungsbeginn. Unsere Öffnungszeiten richten sich dabei nach dem jeweiligen Veranstaltungstermin.</p>
+          </div>
+        </div>
+        <div class="irow rv d2">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1.1.5 1.1 1.1V21c0 .6-.5 1.1-1.1 1.1C11.5 22.1 1.9 12.5 1.9 2.9 1.9 2.4 2.4 2 3 2h3.6c.6 0 1.1.5 1.1 1.1 0 1.4.2 2.7.6 3.9.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+          <div><span class="ilbl"><strong>Reservierungen</strong></span><p class="ival"><a href="tel:+49303044023">+49 30 3044023</a></p></div>
+        </div>
+        <div class="irow rv d3">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="9" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M4 15h16"/></svg>
+          <div><span class="ilbl"><strong>Öffentliche Verkehrsmittel</strong></span><p class="ival">U2 Olympia-Stadion · S5, S3 oder S9 Olympiastadion<br>Bus M49 · 218 <br>Bus Haltestelle: Flatowallee/Olympiastadion</p></div>
+        </div>
+        <div class="irow rv d3">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="9" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M4 15h16"/></svg>
+          <div><span class="ilbl"><strong>Unsere Lage</strong></span><p class="ival">Olympiastadion: 2 Min.<br>Sommerbad Olympiastadion: 5 Min.
+<br>Friedhof Heerstraße: 5 Min.
+<br> Waldbühne: 10 Min.
+<br>Glockenturm: 10 Min.
+<br>Teufelsberg: 15 Min.</p></div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="rv d2">
+      <div class="loc-photo">
+        <img src=".jpg" alt="Preußisches Landwirtshaus in Charlottenburg" loading="lazy">
+      </div>
+      <div class="loc-tag">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l9 4-9 4-9-4z"/><path d="M3 7v6c0 2 4 4 9 4s9-2 9-4V7"/></svg>
+        <span>Direkt am Berliner Olympiastadion &amp; Waldbühne</span>
+      </div>
+    </div>-->
+  </div>
+</section>
+
+<!-- CTA / RESERVATION -->
+<section class="sec cta-sec" id="reserve">
+  <div class="stag rv"><strong>Kommen Sie zu uns</strong></div>
+  <h2 class="sh rv d1"><strong>Tisch reservieren</strong></h2>
+  <p class="cta-sub rv d2">Wir freuen uns auf Ihren Besuch.</p>
+  <div class="cta-cards rv d3">
+    <div class="ccard">
+      <div class="ccard-ico-wrap">
+        <svg class="ccard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1.1.5 1.1 1.1V21c0 .6-.5 1.1-1.1 1.1C11.5 22.1 1.9 12.5 1.9 2.9 1.9 2.4 2.4 2 3 2h3.6c.6 0 1.1.5 1.1 1.1 0 1.4.2 2.7.6 3.9.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+      </div>
+      <span class="ccard-v">Reservierungsanfragen</span>
+      <a href="tel:+49303044023" class="ccard-l">+49 30 3044023</a>
+      <a href="tel:+49303044023" class="btn-accent">Jetzt anrufen</a>
+    </div>
+    <div class="ccard">
+      <div class="ccard-ico-wrap">
+        <svg class="ccard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/><path d="m6 6 12 12" stroke-dasharray="2 3"/></svg>
+      </div>
+      <span class="ccard-v">Olympiastadion / Waldbühne</span>
+      <p class="ccard-note">Bei Veranstaltungen im Olympiastadion und in der Waldbühne nehmen wir keine Reservierungen an. Die Tische werden ausschließlich nach freier Platzwahl vergeben.</p>
+    </div>
+    <div class="ccard">
+      <div class="ccard-ico-wrap">
+        <svg class="ccard-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6 8 7 8-7"/></svg>
+      </div>
+      <span class="ccard-v">Gruppenanfragen ab 10 Personen</span>
+      <a href="mailto:info@preussisches-landwirtshaus.de" class="ccard-l">info@preussisches-landwirtshaus.de</a>
+      <a href="mailto:info@preussisches-landwirtshaus.de" class="btn-accent">E-Mail schreiben</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-brand">Preußisches Landwirtshaus</div>
+      <p class="foot-tag">Deutsche Küche und Berliner Spezialitäten seit drei Generationen ein Ort der Gastlichkeit im Herzen Charlottenburgs.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#menu">Speisekarte</a></li>
+        <li><a href="#events">Veranstaltungen</a></li>
+        <li><a href="#raeume">Location mieten</a></li>
+        <li><a href="#location">Anfahrt</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Öffnungszeiten</h4>
+      <p><strong> Montag – Samstag</strong><br>17:00 Uhr - 22:00 Uhr<br><br><strong>Sonntag &amp; Feiertage</strong><br>12:00 Uhr - 22:00 Uhr</p>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <p>Flatowallee 23<br>14055 Berlin<br><br><a href="tel:+49303044023">+49 30 3044023</a><br><br><a href="mailto:info@preussisches-landwirtshaus.de">info@preussisches-landwirtshaus.de</a></p>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p class="foot-copy">© <span id="year"></span> Preußisches Landwirtshaus · Berlin </p>
+  </div>
+</footer>
+
+<!-- LEGAL ACCORDION -->
+<div class="legal-box">
+  <div class="legal-inner">
+    <button class="legal-toggle" id="legalToggle" aria-expanded="false" onclick="toggleLegal()">
+      <span>Impressum &amp; Datenschutz</span>
+      <span class="legal-plus" id="legalPlus">+</span>
+    </button>
+    <div class="legal-content" id="legalContent">
+      <div class="legal-body">
+        <h4>Impressum</h4>
+        <p><strong>Preußisches Landwirtshaus</strong><br>
+        <p>Angaben gemäß § 5 DDG</p>
+        <p>Renger und Wylach GbR, <br> handelnd unter „Preußisches Landwirtshaus“<br>
+        <h5>Gesellschafter:</h5>
+        <p>Benjamin Renger und Walter Wylach</p>
+        <h5>Adresse:</h5>
+        <p>Flatowallee 23<br>14055 Berlin</p>
+        <h5>Kontakt:</h5>
+        <p>Telefon: <a href="tel:+49303044023">030 / 30 44 023</a><br>E-Mail: <a href="mailto:info@preussisches-landwirtshaus.de">info@preussisches-landwirtshaus.de</a></p>
+        <h5>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:</h5>
+        <p>DE196555783</p>
+        <h5>Zuständige Aufsichtsbehörde:</h5>
+        <p>Bezirksamt Charlottenburg-Wilmersdorf von Berlin</p>
+        <h5>Verbraucherstreitbeilegung:</h5>
+        <p>Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+        <h4>Datenschutzerklärung</h4>
+        <h5>Allgemeine Hinweise</h5>
+        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+        <h5>1. Wer ist verantwortlich für die Datenverarbeitung auf dieser Website?</h5>
+        <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen. </p>
+        <h5>2.Wie erfassen wir Ihre Daten?</h5>
+        <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
+Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
+        <h5>3. Wofür nutzen wir Ihre Daten?</h5>
+        <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+        <h5>4. Welche Rechte haben Sie bezüglich Ihrer Daten?</h5>
+        <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+
+Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.</p>
+        <h5>Analyse-Tools und Tools von Dritt­anbietern</h5>
+        <p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.
+
+Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerklärung.</p>
+        <h5>1. Hosting und Content Delivery Networks (CDN)
+Externes Hosting  </h5>
+        <p>Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Webseitenzugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
+Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Anweisungen in Bezug auf diese Daten befolgen.
+
+        <h5>2. Allgemeine Hinweise und Pflichtinformationen</h5>
+        <p><strong>Datenschutz</strong><br>
+Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+<br>
+Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
+<br>
+Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+<br>
+<strong>Hinweis zur verantwortlichen Stelle</strong><br>
+Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+<br>
+Renger und Wylach GbR<br>
+Flatowallee 23<br>
+14055 Berlin<br>
+<br>
+Telefon: +49 (0) 303044023<br>
+E-Mail: info@preussisches-landwirtshaus.de<br>
+
+Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
+<br>
+<strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung</strong><br>
+Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+<br>
+<strong>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</strong><br>
+WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).
+<br>
+WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).
+<br>
+<strong>Beschwerde­recht bei der zuständigen Aufsichts­behörde</strong><br>
+Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
+<br>
+<strong>Recht auf Daten­übertrag­barkeit</strong><br>
+Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
+<br>
+<strong>SSL- bzw. TLS-Verschlüsselung</strong><br>
+Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+<br>
+Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
+<br>
+<strong>Auskunft, Löschung und Berichtigung</strong><br>
+Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
+<br>
+<strong>Recht auf Einschränkung der Verarbeitung</strong><br>
+Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:
+<br>
+1. Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+<br>
+2. Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen.
+<br>
+3. Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+<br>
+4. Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+<br>
+5. Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.
+
+<strong>Datenerfassung auf dieser Website</strong><br>
+Server-Log-Dateien<br>
+Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+<br>
+1. Browsertyp und Browserversion<br>
+2. verwendetes Betriebssystem<br>
+3. Referrer URL<br>
+4. Hostname des zugreifenden Rechners<br>
+5. Uhrzeit der Serveranfrage<br>
+6. IP-Adresse<br>
+<br>
+Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+<br>
+Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.
+<br>
+Anfrage per E-Mail, Telefon oder Telefax<br>
+Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+<br>
+Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.
+<br>
+Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

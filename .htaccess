@@ -1,0 +1,62 @@
+# ============================================================
+# Preußisches Landwirtshaus — .htaccess
+# Place this file in the same root folder as index.html
+# ============================================================
+
+Options -Indexes
+
+# ------------------------------------------------------------
+# 1. Force HTTPS + www.  (this is your original, already-working rule — unchanged)
+# ------------------------------------------------------------
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !=443
+RewriteRule ^(.*)$ https://www.preussisches-landwirtshaus.de/$1 [R=301,L]
+
+# ------------------------------------------------------------
+# 2. Security headers
+# ------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ------------------------------------------------------------
+# 3. Correct MIME types for the self-hosted fonts
+# ------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType font/ttf .ttf
+  AddType application/pdf .pdf
+</IfModule>
+
+# ------------------------------------------------------------
+# 4. Browser caching for static files
+# ------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# ------------------------------------------------------------
+# 5. Compression
+# ------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript
+</IfModule>
+
+# ------------------------------------------------------------
+# 6. Block direct access to this file
+# ------------------------------------------------------------
+<Files ".htaccess">
+  Require all denied
+</Files>
